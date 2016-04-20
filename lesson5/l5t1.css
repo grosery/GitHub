@@ -1,0 +1,47 @@
+.main {
+	background: #0092ff;
+	color: white;
+	list-style:none;
+	position: relative;
+	height: 25px;
+	
+}
+.main li {
+	display: inline-block;
+	/*position: relative;*/
+}
+
+.submenu {
+	height: 25px;
+	list-style:none;
+	position: absolute;
+	display:none;
+	left:0px;
+	top:18px;
+}
+/*.submenu>li {
+	display: inline-block;
+}*/
+a {
+	padding: 1px;
+	text-decoration: none;
+	color: white;
+}
+.main>li>a:hover {
+	
+	color:grey;
+	background: #c5c5c5;
+		
+}
+
+/*.main>li>a:hover>.submenu {
+	
+	
+	display:inline-block;
+}*/
+.main>li:hover .submenu {
+	display:inline-block;
+	color:grey;
+	background: #c5c5c5;
+	
+}

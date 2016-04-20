@@ -1,0 +1,18 @@
+/*label .red:checked  {
+	display: none;
+}*/
+.red {
+	background-color: red;
+	color: white;
+}
+.blue {
+	background-color: blue;
+	color:white;
+}
+.green {
+	background-color: green;
+	color:white;
+}
+input:checked + label {
+	background: #CCC;
+}

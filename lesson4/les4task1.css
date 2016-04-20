@@ -1,0 +1,26 @@
+li {
+	font-family:Economica;
+	font-weight: bold;
+	padding: 12px;
+	
+	display: inline-block;
+}
+.na {
+	width: 900px;
+	text-align:center;
+
+}
+
+ul {
+	list-style:none;
+}
+.menu {
+	background-color: #FF00FF;
+	width: 100%;
+	color:white;
+	
+}
+li:hover {
+	background:  #DCDCDC;
+	color: #808080;	
+}

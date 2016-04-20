@@ -1,0 +1,28 @@
+body {
+	background: url(fon.png);
+	background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+img, .commet {
+	display: inline-block;
+}
+.commet {
+	background-color:white;
+	width: 360px;
+	margin-left: 2%;
+}
+img {
+	width: 100px;
+	height: 100px;
+	margin-left: 7%;
+	vertical-align: top;
+}
+p {
+	margin: 0;
+	padding-top:10px ;
+	border-top:1px dashed black;
+}
+.customer {
+	float: right;
+}
