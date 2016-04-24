@@ -1,28 +1,58 @@
-body {
+.testemotials {
 	background: url(fon.png);
-	background-repeat: no-repeat;
-    background-size: cover;
-    
+	
 }
-img, .commet {
+.commet, .colums {
 	display: inline-block;
+	
 }
 .commet {
 	background-color:white;
-	width: 360px;
-	margin-left: 2%;
+	/*width: 360px;*/
+	width: 70%;
+	margin-left: 5%;
+
 }
-img {
+.colums img {
+	display: inline-block;
 	width: 100px;
 	height: 100px;
 	margin-left: 7%;
 	vertical-align: top;
 }
-p {
+.commet p {
 	margin: 0;
 	padding-top:10px ;
 	border-top:1px dashed black;
 }
 .customer {
 	float: right;
+}
+.colums {
+	margin-top: 5%;
+	width: 49%;
+}
+.content {
+	margin-bottom: 10%;
+}
+.title {
+	margin-top: 5%;
+	margin-bottom: 2%;
+	font-size: 32px;
+	color:#3170a8;
+	font-weight: bold;
+	text-align: center;
+}
+.orange {
+	color:orange;
+}
+.human::before {
+	content: '- ';
+}
+.human, .customer {
+	color:#3170a8;
+}
+.content {
+	padding-top: 150px;
+	padding-bottom:150px;
 }
