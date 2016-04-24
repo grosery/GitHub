@@ -1,79 +1,512 @@
-.header {
-	display: inline-block;
-	margin-bottom:20px;
+/* --------------- reset.css --------------- */
+html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;                               /* обнуляем отступы и убираем бордюры */
+	vertical-align: baseline;          /* приводим все к одной базовой линии */
+	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
+	font-size: 100%;                     /* размер шрифта всем одинаковый */
 }
-.company {
-	color:orange;
+a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
+	margin:0;
+	padding:0;
+	font-size:100%;
+	vertical-align:baseline;
+	background:transparent;
+	outline:none;
+}
+table {						/* устраняем отступы между ячейками таблицы */
+	border-collapse: collapse; 
+	border-spacing: 0;
+}
+td, td img {
+	vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
+} 
+input, select, button, textarea {
+	margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
+	font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
+	outline: none;
+}
+input[type="text"], input[type="password"], textarea {
+	padding: 0; 				/* убираем внутренние отступы для текстовых полей */
+}
+input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
+	vertical-align: bottom;
+}
+input[type="radio"] {
+	vertical-align: text-bottom;
+}
+sub {
+	vertical-align: sub;
+	font-size: smaller;
+}
+sup {
+	vertical-align: super;
+	font-size: smaller;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display:block;
+}
+nav ul {
+	 list-style:none;
+}
+/* --------------- /reset.css --------------- */
+
+/* --------------- базовые настройки ---------*/
+html {
+	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
+}
+body {
+	color: #000;
+	text-align: left;
+	font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
+	min-height:100%;
+}
+a, a:visited { /* порядок правил для ссылок имеет значение */
+	color: #e6618c;
+	text-decoration: underline;
+}
+a:hover {
+	color: #fdf208;
+	text-decoration:none;
+}
+a:focus, a:active {
+	color: #c83867;
+	text-decoration: underline;
+}
+h1, h2, h3, h4, h5, h6{
+	font-weight:normal;
+}
+img{
+
+	max-width:100%;
+}
+.clr{
+	clear:both;
+}
+.clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+body {
+	/*max-width: 1000px;*/
+	margin: 0 auto;
+}
+.header, .slider_top, .colums, .middle_section, .testamotials, .best_value {
+	margin-left: 190px;
+	margin-right: 190px;
+}
+
+.logo {
+	display: inline-block;
+	padding-top: 42px;
+	padding-bottom: 42px;
+}
+
+.menu {
+	display: inline-block;
+	margin-left: 20%;
+}
+.menu li{
+	display: inline-block;
+	list-style: none;
+	box-sizing:border-box;
+	padding-left:21px;
+	padding-right:21px;
+	
+}
+.menu li a {
+	text-decoration: none;
+	font-size:10px;
+	color:#989898;
+	
+}
+.menu li a:hover {
+	color:#3070a8;
+	border-bottom:5px solid #3070a8;
+	padding-bottom:41px;
+}
+.logo span {
+	font-size:25px;
 }
 .name {
 	font-weight: bold;
 	color:#3070a8;
 }
-.menu>ul>li {
-	display: inline-block;
-	list-style:none;
-	font-weight: bold;
-	
-}
-ul {
-	display: inline-block;
-	padding: 0;
-	margin: 0;
-}
-.menu {
-	display: inline-block;
-	
-}
-
-.logo {
-	display: inline-block;
-}
-.menu a {
-	text-decoration: none;
-	color:#989898;
-	
-}
-.menu a:hover {
-	padding-bottom: 35px;
-	border-bottom:3px solid #3070a8;
-	color:#3070a8;
+.company {
+	color:orange;
 }
 .slider {
-	background:url('slider.jpg');
-	background-repeat:no-repeat;
-	background-size:cover;
-	/*background-attachment:fixed ;*/
-	height: 500px;
-	position:relative;
-}
-.opacity {
-	/*background-color:rgba(10, 106, 195, 0.3);*/
-	background-color: #0a6ac3; 
-    opacity: 0.3;
-    background-image: linear-gradient(45deg, #3070a8 25%, transparent 25%, transparent 75%, #3070a8 75%, #3070a8), 
-    linear-gradient(45deg, #3070a8 25%, transparent 25%, transparent 75%, #3070a8 75%, #3070a8);
-	background-size:2px 2px;
-	background-position:0 0, 1px 1px;
-	width: 100%;
-	height: 100%;
-	/*position: relative;*/
+	background: url('banner.jpg');
+	background-repeat: no-repeat;
+	background-size:100% 100%;
 	
+	/*height: 585px;*/
 }
-.span_slider {
-	color:white;
-	margin: ;
-	position: absolute;
-	top: 0;
+.slider_top {
+	padding-top: 150px;
+	padding-bottom: 150px;
 
 }
+.slider p {
+	color:white;
+	text-align: center;
+	line-height: 1.5;
+}
 .first_row {
-	font-size:25px;
+	font-size: 36px;
+	
+	font-family: FuturaRegular.ttf;
 }
 .second_row {
-	font-size:35px;
+	font-family: FuturaBold.ttf;
+	font-size: 48px;
 	font-weight: bold;
 }
-button {
+.third_row {
+  	font-size: 20px;
+  	font-family: "Calibri";
+  	font-style: italic;
+}
+.slider_top input[type="button"] {
+	background: none;
+	font-size: 16px;
+  	font-family: "Open Sans";
+  	color:white;
+	width: 249px;
+	height: 61px;
+}
+.colums_title {
+  	font-size: 30px;
+  	font-family: "Trebuchet MS";
+	color: rgb(65, 82, 92);
+  	font-weight: bold;
+  	text-transform: uppercase;
+  	line-height: 0.833;
+  	text-align: center;
+  	margin-top: 65px;
+  	/*position: absolute;
+  	left: 314px;
+  	top: 767.005px;
+  	z-index: 126;*/
+}
+.protect, .alert, .detect {
+	display: inline-block;
+	width: 33%;	
+}
+.colums_3 {
+	margin-top: 75px;
+	margin-bottom: 60px;
+}
+.colums_3 img {
+	margin-bottom: 35px;
+}
+.titile_col {
+  font-size: 30px;
+  font-family: "Futura-Normal";
+  color: rgb(48, 112, 168);
+  line-height: 1.2;
+  text-align: center;
+  /* -moz-transform: matrix( 0.99935973180025,0,0,0.99789020284262,0,0); */
+  /* -webkit-transform: matrix( 0.99935973180025,0,0,0.99789020284262,0,0); */
+  /* -ms-transform: matrix( 0.99935973180025,0,0,0.99789020284262,0,0); */
+}
+.images {
+	text-align: center;
+}
+.content_col {
+  font-size: 14px;
+  font-family: "Open Sans";
+  color: rgb(153, 153, 153);
+  line-height: 1.786;
+  text-align: center;  
+}
+.human_2 {
+	background: url('middle_section.jpg');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.middle_section {
+	padding-top: 85px;
+	padding-bottom: 80px; 
+}
+.first_content_section {
+	font-size: 26px;
+  	font-family: "Futura-Bold";
+  	color: rgb(238, 129, 41);
+  	text-transform: uppercase;
+  	line-height: 1.846;
+  	text-align: left;
+}
+.second_content_section {
+  	font-size: 19px;
+  	font-family: "Open Sans";
+  	color: rgb(255, 255, 255);
+  	font-style: italic;
+  	line-height: 1.579;
+  	text-align: left;
+}
+
+.middle_section li {
+  	font-size: 14px;
+  	font-family: "Open Sans";
+  	color: rgb(157, 157, 157);
+  	line-height: 2.143;
+  	text-align: left;
+}
+
+.middle_section li:nth-child(even) {
+  	color: rgb(48, 112, 168);  
+}
+.middle_section ul {
+	margin-left: 20px;
+}
+.commet {
+	background:url('testamotians.jpg'); 
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+.options{
+	display: inline-block;
+}
+.commet_row {
+	display: inline-block;
+	margin-bottom: 75px;
+}
+.commet_testiamotials {
+	margin-top: 55px;
+
+	width: 49%;
+	display: inline-block;
+}
+.context {
+	font-size: 13px;
+  	font-family: "Open Sans";
+  	color: rgb(102, 102, 102);
+  	line-height: 1.538;
+  	text-align: left;
+  	padding-top: 5px;
+  	border-top: 1px dashed rgb(102, 102, 102);
+}
+.options {
+	background-color: white;
+	padding:10px;
+	width: 60%;
+
+}
+.second_name::before {
+	content: '- ';
+}
+.second_name, .customer {
+	color:#3170a8;
+}
+.customer {
+	float: right;
+}
+.commet_testiamotials img {
+	display: inline-block;
 	width: 100px;
-	height: 50px;
+	height: 100px;
+	margin-left: 7%;
+	vertical-align: top;
+}
+.commet_title {
+	padding-top:55px;
+}
+.orange {
+	text-transform: uppercase;
+  	line-height: 0.45;	
+	font-size: 40px;
+	color: rgb(238, 129, 41);
+  	font-family: "Futura-Bold";
+}
+.commet_title p {
+  font-size: 40px;
+  font-family: "Futura-Normal";
+  color:#3170a8;
+  text-transform: uppercase;
+  line-height: 0.45;
+  text-align: center;
+
+}
+.footer_left_col {
+	display: inline-block;
+	width: 70%;
+}
+.adress>li:nth-child(1)::before {
+	content:url(location_icon.jpg);
+
+}
+.footer_right_col {
+	display: inline-block;
+	width: 30%;
+	background-color: green;
+}
+.adress {
+	margin-left: 190px;
+	list-style: none;
+}
+.adress span {
+	margin-left: 25px;
+}
+.footer_bottom_col {
+	background-color: #3070a8;
+	color:white;
+	text-align: center;
+}
+
+.left-3 {
+	display: inline-block;
+}
+
+.table li {
+	list-style:none;	
+	border:2px solid white;
+	height: 30px;
+	margin-left: 15px;
+	margin-right: 15px;
+	text-align: left;
+}
+.table li:nth-child(2n-1) {
+	background-color:#edf5fd;
+}
+.table li:nth-child(2n) {
+	background-color:#f5f5f6;
+}
+.table>ul>li>span>img {
+	margin-left: 15px;
+	margin-right: 15px;
+	width: 15px;
+	height: 15px;
+
+}
+.price1 {
+	font-size: 65px;
+}
+sub {
+	font-size: 15px;
+}
+sup {
+	font-size: 30px;
+}
+
+.left-3:hover {
+  border-style: solid;
+  border-width: 5px;
+  border-color: orange;
+  background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(253,253,253) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(253,253,253) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(253,253,253) 100%);
+  box-shadow: 0px 0px 12.87px 0.13px rgba(8, 116, 178, 0.004);
+
+}
+.left-3:hover .button input[type="button"] {
+	background-color: orange;
+	box-shadow: 0 5px 4px orange;
+	border-color: orange;
+}
+.left-3:hover .box_header {
+	background-color: orange;
+}
+.left-3 {
+	font-family: Trebuchet MS;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgb(232, 234, 236);
+  border-radius: 5px;
+  margin-left: -5px;
+  background-image: -moz-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(253,253,253) 100%);
+  background-image: -webkit-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(253,253,253) 100%);
+  background-image: -ms-linear-gradient( 90deg, rgb(255,255,255) 0%, rgb(253,253,253) 100%);
+}
+.slogan {
+  font-size: 30px;
+  font-family: "Trebuchet MS";
+  color: rgb(65, 82, 92);
+  font-weight: bold;
+  text-transform: uppercase;
+  line-height: 0.833;
+  text-align: center;
+  margin-top:70px;
+  margin-bottom: 75px;
+}
+.best_value {
+	margin-bottom: 85px;
+}
+.box_header {
+  font-size: 24px;
+  font-family: "Futura-Bold";
+	background-color: #3070a8;
+  text-transform: uppercase;
+  color:white;
+  font-weight: bold;
+  line-height: 2.833;
+  text-align: center;
+  /*border-top-right-radius: 5px;*/
+	/*border-top-left-radius: 5px;*/
+}
+.price {
+	text-align: center;
+}
+.headpr {
+  font-size: 24px;
+  font-family: "Futura-Normal";
+  text-transform: uppercase;
+  line-height: 2.833;
+  text-align: center;
+}
+sub {
+	line-height: 0.833;
+	font-size: 18px;
+  	font-family: "Futura-Bold";
+  	line-height: 3.333;
+  	text-align: center;
+
+}
+.button input[type="button"] {
+	font-size: 14px;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  line-height: 1.143;
+  text-align: center;
+  border:1px solid #3070a8;
+  padding: 10px 57px;
+  box-shadow: 0 5px 4px #3070a8;
+  /*margin-left: 15px;*/
+  /*margin-top: 15px;*/
+  margin: 15px;
+  border-radius: 5px;
+  background-color: #3070a8;
+  color:white;
+  font-weight: bold;
+  /*box-shadow: 0px 3px 0px 0px rgba(179, 86, 11, 0.004);*/
+}
+/*.button {
+	margin: 15px;
+  font-size: 14px;
+  font-family: "Open Sans";
+  text-transform: uppercase;
+  line-height: 1.143;
+  text-align: center;
+  border:1px solid #3070a8;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #3070a8;
+  box-shadow: 0px 3px 0px 0px rgba(179, 86, 11, 0.004);
+}
+*/
+.first_col_box .box_header {
+	background-color: #2bc2d5;	
+}
+.second_col_box .box_header {
+	background-color: #3070a8;
+}
+.third_col_box .box_header {
+	background-color: #00b89a;
+}
+.box {
+	text-align: center;
 }
